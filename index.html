@@ -101,6 +101,17 @@
             transform: translateY(0) scale(1);
         }
 
+        /* Oscillating Icon Animation */
+        @keyframes float-icon {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-2px) rotate(-6deg); }
+            75% { transform: translateY(2px) rotate(6deg); }
+        }
+        .animate-float-icon {
+            animation: float-icon 3s ease-in-out infinite;
+            display: inline-block;
+        }
+
         /* Navbar Scrolled State */
         .nav-scrolled {
             background-color: rgba(255, 255, 255, 0.98);
@@ -183,26 +194,40 @@
     <!-- Hero Section -->
     <section class="relative pt-32 pb-16 md:pt-48 md:pb-24 px-4 text-center flex flex-col items-center justify-center">
         <div class="max-w-4xl mx-auto z-10 reveal">
-            <p class="text-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">A Sanctuary in New York City</p>
-            <h1 class="text-5xl md:text-7xl font-display text-charcoal mb-6 leading-tight">
+            <!-- Enlarged Typography -->
+            <p class="text-gold font-bold tracking-[0.2em] uppercase text-base md:text-lg mb-4">A Sanctuary in New York City</p>
+            <h1 class="text-6xl md:text-8xl font-display text-charcoal mb-6 leading-tight">
                 Discover True <br> <span class="italic font-serif text-sage-700">Tranquility</span>
             </h1>
             <div class="dec-line"></div>
-            <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto font-light leading-relaxed">
                 Experience the pinnacle of luxury, blending ancient Wat Pho wisdom with contemporary clinical comfort. 
             </p>
 
-            <!-- Center Logo Insertion -->
-            <img src="./Assets/shevaness-logo.png" alt="Shevaness Thai Spa Logo" class="h-32 md:h-40 w-auto mx-auto mb-10 object-contain opacity-95" onerror="this.src='https://placehold.co/300x200/FFD700/333333?text=SHEVANESS+LOGO'">
+            <!-- Diagnostic CTA Box -->
+            <div class="max-w-2xl mx-auto mb-10 pb-4">
+                <p class="text-charcoal font-bold text-xl md:text-2xl mb-3">Not sure which treatment is right for you?</p>
+                <p class="text-gray-600 font-light text-base md:text-lg mb-6 leading-relaxed">
+                    Call us to discuss your specific pains, stress, or wellness goals. Our expert therapists will consult with you to recommend the perfect, tailored holistic solution for your body's needs.
+                </p>
+                <a href="tel:+19297155156" class="inline-flex items-center gap-2 text-sage-700 hover:text-gold-dark font-bold uppercase tracking-widest transition-all duration-300 border-b-2 border-sage-300 hover:border-gold pb-1 hover:gap-4">
+                    Call for a Free Consultation
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+            </div>
 
-            <div class="bg-sage-100/80 border border-sage-300 p-6 rounded-lg max-w-lg mx-auto mb-10 shadow-sm backdrop-blur-sm transition-transform duration-500 hover:scale-[1.02]">
+            <!-- Exclusive Offer Box -->
+            <div class="bg-sage-100/80 border border-sage-300 p-6 md:p-8 rounded-lg max-w-lg mx-auto mb-10 shadow-sm backdrop-blur-sm transition-transform duration-500 hover:scale-[1.02]">
                 <p class="text-xl font-serif text-sage-900 mb-2">Exclusive Offer</p>
-                <p class="text-3xl font-black text-gold-dark mb-4">20% OFF Your Treatment</p>
+                <p class="text-3xl md:text-4xl font-black text-gold-dark mb-6">20% OFF Your Treatment</p>
                 <a href="tel:+19297155156" class="inline-block w-full bg-gold hover:bg-gold-dark text-charcoal font-black py-4 px-8 rounded-sm btn-glow text-lg tracking-wider transition-colors">
                     Call Now to Claim & Book
                 </a>
-                <p class="mt-3 text-sm text-gray-500 font-light">+1 (929) 715-5156 • No online booking required</p>
+                <p class="mt-4 text-sm text-gray-500 font-light">+1 (929) 715-5156 • No online booking required</p>
             </div>
+
+            <!-- Enlarged Bottom Logo Insertion -->
+            <img src="./Assets/shevaness-logo.png" alt="Shevaness Thai Spa Logo" class="h-40 md:h-56 w-auto mx-auto mt-12 object-contain opacity-95 transition-transform duration-700 hover:scale-105" onerror="this.src='https://placehold.co/400x300/FFD700/333333?text=SHEVANESS+LOGO'">
         </div>
     </section>
 
@@ -211,9 +236,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 reveal">
                 <span class="bg-white text-sage-700 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest shadow-sm border border-sage-100 mb-4 inline-block">Our Specialties</span>
-                <h2 class="text-4xl font-serif text-charcoal mb-4">Signature Treatments</h2>
+                <h2 class="text-4xl md:text-5xl font-serif text-charcoal mb-4">Signature Treatments</h2>
                 <div class="dec-line"></div>
-                <p class="text-gray-600 max-w-2xl mx-auto">Meticulously curated therapies designed to restore your natural balance and promote deep, restorative healing.</p>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Meticulously curated therapies designed to restore your natural balance and promote deep, restorative healing.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
@@ -221,11 +246,11 @@
                 <div class="reveal saas-card p-4 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
                     <div class="overflow-hidden mb-6 spa-image relative bg-sage-100 min-h-[18rem]">
                         <div class="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-charcoal shadow-sm">Traditional</div>
-                        <img src="./Assets/royal-thai-massage-ashiatsu.png" alt="Royal Thai Massage" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <img src="./Assets/authentic-thai-massage-stretch.png" alt="Royal Thai Massage" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="px-2 pb-4">
                         <h3 class="text-2xl font-serif text-sage-900 mb-2 group-hover:text-gold transition-colors">Royal Thai Massage</h3>
-                        <p class="text-gray-600 mb-4 font-light text-sm leading-relaxed">Ancient techniques combining rhythmic compression and assisted stretching to clear energy blockages.</p>
+                        <p class="text-gray-600 mb-4 font-light text-sm leading-relaxed">Ancient stretching and rhythmic compression to clear energy blockages and improve flexibility.</p>
                     </div>
                 </div>
 
@@ -233,7 +258,7 @@
                 <div class="reveal saas-card p-4 group cursor-pointer" style="transition-delay: 100ms;" onclick="window.location.href='tel:+19297155156'">
                     <div class="overflow-hidden mb-6 spa-image relative bg-sage-100 min-h-[18rem]">
                         <div class="absolute top-4 left-4 z-10 bg-sage-700/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-white shadow-sm">Popular</div>
-                        <img src="./Assets/eep-tissue-oil-massage.jpg" alt="De-Stress Deep Tissue Massage" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                        <img src="./Assets/hot-candle-oil-massage-nyc.png" alt="De-Stress Deep Tissue Massage" class="absolute inset-0 w-full h-full object-cover object-center" onerror="this.src='https://images.unsplash.com/photo-1519823551278-64ac92734fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                     </div>
                     <div class="px-2 pb-4">
                         <h3 class="text-2xl font-serif text-sage-900 mb-2 group-hover:text-gold transition-colors">De-Stress Deep Tissue</h3>
@@ -256,55 +281,111 @@
 
             <!-- Full Spa Menu List -->
             <div class="max-w-5xl mx-auto bg-white saas-card p-8 md:p-12 reveal border border-sage-100">
-                <div class="text-center mb-10">
-                    <h3 class="text-3xl font-serif text-charcoal mb-2">Complete Spa Menu</h3>
-                    <p class="text-gray-500 font-light">Explore our full range of therapeutic experiences</p>
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-serif text-charcoal mb-4">Complete Spa Menu</h3>
+                    <p class="text-gray-500 font-light text-lg">Explore our full range of therapeutic experiences</p>
                 </div>
                 
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Royal Thai Massage</span>
+                <!-- Added detailed descriptions and oscillating icons -->
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Shevaness Signature Holistic Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">A full-body fusion of Thai acupressure and soothing holistic techniques to restore internal harmony.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Shevaness Signature Holistic Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Mobile Services (Hotel & Home)</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Luxury treatments brought directly to your location. Perfect for tourists or ultimate convenience.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">De-Stress Deep Tissue Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Head, Neck & Facial Relief Care</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Targeted acupressure to release upper-body tension, soothe headaches, and enhance natural glow.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Deep Sleep Aromatherapy Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">De-Stress Deep Tissue Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Clinical, targeted pressure using warm oils to alleviate chronic muscle tension and knots.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Aloha Lomi Lomi Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Deep Sleep Aromatherapy Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Gentle, soothing strokes paired with premium essential oils to promote profound rest and anxiety relief.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Clean Detox Herbal Compress Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Clean Detox Herbal Compress Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Warm, medicinal herbal bundles pressed along energy lines to draw out toxins and reduce inflammation.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Shevaness Couple Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Shevaness Couple Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">A shared journey of renewal and connection experienced side-by-side in our private, tranquil suites.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Head, Neck & Facial Relief Care</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Royal Thai Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Ancient techniques utilizing rhythmic compression and assisted stretching to clear energy blockages.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Shooting Foot Massage</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Aloha Lomi Lomi Massage</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Continuous, flowing strokes that mimic ocean waves to restore harmony to the body and mind.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Shevaness at home or hotel</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Soothing Foot Reflexology</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Expert reflexology techniques applied to specific pressure points to relieve full-body stress.</span>
+                        </div>
                     </li>
-                    <li class="flex items-center gap-4 p-3 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group md:col-span-2 lg:col-span-1">
-                        <div class="bg-sage-100 text-sage-700 p-2 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
-                        <span class="font-medium text-gray-800">Energy Boost Hot Stone</span>
+                    <li class="flex items-start gap-4 p-4 rounded-xl hover:bg-sage-50 transition-all duration-300 border border-transparent hover:border-sage-100 hover:translate-x-2 group md:col-span-2 lg:col-span-1 cursor-pointer" onclick="window.location.href='tel:+19297155156'">
+                        <div class="bg-sage-100 text-sage-700 p-3 rounded-lg group-hover:bg-gold group-hover:text-charcoal transition-colors animate-float-icon mt-1">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-gray-800 text-lg block mb-1">Energy Boost Hot Stone</span>
+                            <span class="text-sm text-gray-500 font-light leading-relaxed block">Smooth, heated stones placed on key points to melt away stiffness and deeply re-energize muscles.</span>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -333,7 +414,7 @@
             </div>
             <div class="w-full md:w-1/2 reveal">
                 <div class="spa-image shadow-2xl border-4 border-sage-700">
-                    <img src="./Assets/luxury-couples-massage-room.jpg" alt="Luxury Couples Massage Room" class="w-full h-auto" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                    <img src="./Assets/couples-massage-room-setup.jpg" alt="Luxury Couples Massage Room" class="w-full h-auto" onerror="this.src='https://images.unsplash.com/photo-1540555700478-4be289fbecef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
                 </div>
             </div>
         </div>
